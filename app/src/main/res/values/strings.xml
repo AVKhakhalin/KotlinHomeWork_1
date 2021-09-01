@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KotlinHomeWork_1</string>
+    <string name="text_text">Hello World!</string>
+    <string name="button_text">Кнопка</string>
 </resources>
