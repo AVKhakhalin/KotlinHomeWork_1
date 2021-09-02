@@ -7,20 +7,19 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    var button : Button? = null
-    var kotlinDataClass : TaskFiveA = TaskFiveA(5, "пять")
-    var textOutput : TextView? = null
+    var button: Button? = null
+    var kotlinDataClass: TaskFiveA = TaskFiveA(5, "пять")
+    var textOutput: TextView? = null
 
-    var taskFiveB : TaskFiveB = TaskFiveB
+    var taskFiveB: TaskFiveB = TaskFiveB
     var newTaskFiveB = taskFiveB.copy()
 
-    val TAG : String = "mylogs"
-    var taskFiveC : TaskFiveC = TaskFiveC()
+    val TAG: String = "mylogs"
+    var taskFiveC: TaskFiveC = TaskFiveC()
 
-    override fun onCreate(savedInstatnceState : Bundle?) {
+    override fun onCreate(savedInstatnceState: Bundle?) {
         super.onCreate(savedInstatnceState)
         setContentView(R.layout.activity_main)
 
@@ -33,15 +32,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (textOutput != null) {
             textOutput?.setText(
                 "Значение первого поля dataClass:\n ${kotlinDataClass.first}\n" +
-                "Значение второго поля dataClass:\n ${kotlinDataClass.second}\n\n" +
-                "Значение полей класса object:\n ${taskFiveB.getFieldOne()}, ${taskFiveB.getFieldTwo()}\n" +
-                "Значение полей копии класса object:\n ${newTaskFiveB.getFieldOne()}, ${newTaskFiveB.getFieldTwo()}\n")
+                        "Значение второго поля dataClass:\n ${kotlinDataClass.second}\n\n" +
+                        "Значение полей класса object:\n ${taskFiveB.getFieldOne()}, ${taskFiveB.getFieldTwo()}\n" +
+                        "Значение полей копии класса object:\n ${newTaskFiveB.getFieldOne()}, ${newTaskFiveB.getFieldTwo()}\n"
+            )
         }
     }
 
-    override fun onClick(view : View?) {
+    override fun onClick(view: View?) {
         if ((view != null) && (view?.id == R.id.button)) {
-            Toast.makeText(view.context, "Нажали на кнопку и вывели логи различных циклов", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                view.context,
+                "Нажали на кнопку и вывели логи различных циклов",
+                Toast.LENGTH_LONG
+            ).show()
             Log.d(TAG, taskFiveC.getLoop1())
             Log.d(TAG, taskFiveC.getLoop2())
             Log.d(TAG, taskFiveC.getLoop3())
